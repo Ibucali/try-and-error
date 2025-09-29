@@ -59,3 +59,32 @@ const submitData = async (e) => {
 if (document.getElementById("js-form")) {
   document.getElementById("js-form").addEventListener("submit", (e) => submitData(e));
 }
+
+const wrappers = document.querySelectorAll(".wrapper");
+
+let clickCount = 0;
+let totalPoints = 0;
+
+const pointsList = [10,20,30,40,50,60,70,80,90,100];
+
+wrappers.forEach(wrapper => {
+  wrapper.addEventListener("click", function(e) {
+    
+    if (!e.target.className.startsWith("box")) return;
+
+    if (clickCount < 5) {
+      const randomPoint = pointsList[Math.floor(Math.random() * pointsList.length)];
+      totalPoints += randomPoint;
+      clickCount++;
+
+      alert(`${randomPoint} puntos！`);
+
+      if (clickCount === 5) {
+        alert(`Tu total es ${totalPoints} puntos \u{1F389}`);
+      }
+      if (totalPoints >= 300) {
+        alert("\u{1F38A} Felicidades! Has alcanzado 300 puntos.");
+      }
+    }
+  });
+});

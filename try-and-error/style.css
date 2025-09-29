@@ -92,3 +92,58 @@ table
   border: 1px solid #000;
   padding: 10px;
 }
+
+.wrapper{
+  display: flex;
+  margin-top: 25px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  background: #ddd;
+  padding: 16px;
+  cursor: pointer;
+}
+.box1{
+  width:50%;
+  height: 80px;
+  background: #ffff00;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: #00008b;
+}
+.box2{
+  width:60%;
+  height: 80px;
+  background: #1e90ff;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.box3{
+  width:70%;
+  height: 80px;
+  background: #ffd700;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: #d2691e;
+}
+.box4{
+  width:75%;
+  height: 80px;
+  background: #ff00ff;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.box5{
+  width:80%;
+  height: 80px;
+  background: #800000;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
