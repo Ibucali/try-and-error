@@ -43,7 +43,7 @@ const submitData = async (e) => {
   const formData = new FormData(e.target);
   
   try {
-    const docRef = await addDoc(collection(db, "reports"), {
+    const docRef = await addDoc(collection(db, "Test"), {
       date: new Date(),
       name: formData.get("name"),
       work: formData.get("work"),
