@@ -90,26 +90,26 @@ wrappers.forEach(wrapper => {
 });
 
 // ✅ Firestore にテストデータを追加して、読み込む関数
-async function testFirestore() {
-  try {
+// async function testFirestore() {
+//   try {
     // テスト用のデータを追加
-    const docRef = await addDoc(collection(db, "Test"), {
-      name: "Test User",
-      createdAt: new Date()
-    });
-    console.log("Document written with ID: ", docRef.id);
+    // const docRef = await addDoc(collection(db, "Test"), {
+    //   name: "Test User",
+    //   createdAt: new Date()
+    // });
+    // console.log("Document written with ID: ", docRef.id);
 
     // 追加されたデータを取得
-    const querySnapshot = await getDocs(collection(db, "Test"));
-    querySnapshot.forEach((doc) => {
-      console.log("Fetched from Firestore:", doc.id, "=>", doc.data());
-    });
+    // const querySnapshot = await getDocs(collection(db, "Test"));
+    // querySnapshot.forEach((doc) => {
+    //   console.log("Fetched from Firestore:", doc.id, "=>", doc.data());
+    // });
 
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
-}
+//   } catch (e) {
+    // console.error("Error adding document: ", e);
+//   }
+// }
 
 // ページ読み込み時にテスト実行
-testFirestore();
+// testFirestore();
 
