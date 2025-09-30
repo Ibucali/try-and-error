@@ -152,6 +152,11 @@ table
   color: #fff;
   border-radius: 3px;
 }
+.agregarPregunta {
+  margin: 25px;
+  padding: 10px;
+  font-size: 16px;
+}
 
 #multi_line_input {
   margin: 25px 0;
