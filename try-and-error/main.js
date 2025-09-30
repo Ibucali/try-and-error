@@ -231,3 +231,8 @@ while (handlerIndex < buttonLength) {
   });
   handlerIndex++;
 }
+
+document.getElementById('multi_line_input').addEventListener('input', function() {
+    const textAreaContent = this.value;
+    console.log("テキストエリアの内容: " + textAreaContent);
+});
