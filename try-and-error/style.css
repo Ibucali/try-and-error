@@ -110,6 +110,7 @@ table
   align-items: center;
   justify-content: center;
   color: #00008b;
+  border-radius: 3px;
 }
 .box2{
   width:60%;
@@ -119,6 +120,7 @@ table
   align-items: center;
   justify-content: center;
   color: #fff;
+  border-radius: 3px;
 }
 .box3{
   width:70%;
@@ -128,6 +130,7 @@ table
   align-items: center;
   justify-content: center;
   color: #d2691e;
+  border-radius: 3px;
 }
 .box4{
   width:75%;
@@ -137,6 +140,7 @@ table
   align-items: center;
   justify-content: center;
   color: #fff;
+  border-radius: 3px;
 }
 .box5{
   width:80%;
@@ -146,4 +150,5 @@ table
   align-items: center;
   justify-content: center;
   color: #fff;
+  border-radius: 3px;
 }
