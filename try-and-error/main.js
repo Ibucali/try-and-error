@@ -113,3 +113,121 @@ wrappers.forEach(wrapper => {
 // ページ読み込み時にテスト実行
 // testFirestore();
 
+const $addPregunta = document.createElement("div"); //$addPreguntaという変数を代入してcreateElement()メソッド(関数)を使って新しいdiv要素を作成
+$addPregunta.setAttribute("id", "pregunta");
+$addPregunta.innerText = "Una alerta primaria simple: ¡échale un vistazo!";
+$addPregunta.style.textAlign = "center";
+$addPregunta.style.width = "100%";
+$addPregunta.style.padding = "10px";
+$addPregunta.style.margin = "20px";
+$addPregunta.style.borderRadius = "5px";
+$addPregunta.style.fontSize = "20px";
+$addPregunta.style.fontWeight = "bold";
+$addPregunta.style.backgroundColor = "#cce5ff";
+
+const $addPregunta2 = document.createElement("div"); // $addPregunta2という変数を代入してcreateElement()メソッド(関数)を使って新しいdiv要素を作成
+$addPregunta2.setAttribute("class", "hola2");
+$addPregunta2.style.display = "flex";
+$addPregunta2.style.justifyContent = "center";
+
+const $crear = document.querySelector(".agregarPregunta");
+$crear.appendChild($addPregunta);
+$crear.appendChild($addPregunta2);
+
+// ボタンを4つ作って .hola の中に入れる
+const $contenedor = document.querySelector(".hola2");
+
+for (let i = 1; i <= 4; i++) {
+    const $boton = document.createElement("button"); // ← divではなくbuttonに
+    $boton.classList.add("btn", "btn-primary"); // class名を追加
+    $boton.innerText = "Botón " + i;
+    $boton.style.marginLeft = "10px";
+    $boton.style.borderRadius = "5px";
+    $boton.style.fontSize = "18px";
+    $boton.style.padding = "12px 24px"; // paddingでボタンのサイズを広げる
+    $boton.style.backgroundColor = "#146ce0ff";
+    $boton.style.color = "#ffffff";
+    $boton.style.cursor = "pointer"; // マウスオーバー時にカーソルをポインターに変更
+    $boton.style.opacity = "1.8"; // ボタンの透明度を設定
+    $boton.style.transition = "opacity 0.3s"; // ホバー時の透明度変化をスムーズにする
+
+    $contenedor.appendChild($boton);
+}
+
+const quiz = [
+  {
+    question: '旅行先、最も人気の場所は次のうちどれ？',
+    answers: [
+      'インド', 
+      'パラグアイ', 
+      'ネパール', 
+      'フランス'
+    ],
+    correct: 'パラグアイ'
+  }, {
+    question: '北海道で流氷が見れる場所は次のうちどれ？',
+    answers: [
+      '室蘭', 
+      '札幌', 
+      '紋別', 
+      '函館'
+    ],
+    correct: '紋別'
+  }, {
+    question: '世界三大美食国の一つで次のうちどれ？',
+    answers: [
+      'ペルー', 
+      'カナダ', 
+      'マダガスカル', 
+      '日本'
+    ],
+    correct: 'ペルー'
+  }
+];
+
+const quizLength = quiz.length;
+let quizIndex = 0;
+let score = 0;
+
+const $button = document.querySelectorAll('.btn.btn-primary');
+const buttonLength = $button.length;
+
+//クイズの問題文、選択肢を定義
+const setupQuiz = () => {
+  document.getElementById("pregunta").textContent = quiz[quizIndex].question;
+  let buttonIndex = 0;
+  while(buttonIndex < buttonLength){
+    $button[buttonIndex].textContent = quiz[quizIndex].answers[buttonIndex];
+    buttonIndex++;
+  }
+}
+setupQuiz();
+
+const clickHandler = (e) => {
+  if(quiz[quizIndex].correct === e.target.textContent){
+    window.alert('正解');
+    score++;
+  } else {
+    window.alert('残念')
+  }
+
+  quizIndex++;
+
+  if(quizIndex < quizLength){
+    //問題数があればこちらを実行
+    setupQuiz();
+  } else {
+    //問題数がなければこちらを実行
+    window.alert('終わり!Your score is' + score + '/' + quizLength + 'です');
+  }
+
+};
+
+//ボタンをクリックしたら正誤判定
+let handlerIndex = 0;
+while (handlerIndex < buttonLength) {
+  $button[handlerIndex].addEventListener('click', (e) => {
+    clickHandler(e);
+  });
+  handlerIndex++;
+}
